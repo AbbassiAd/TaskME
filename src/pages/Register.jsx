@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import Logo from '../assets/logo1.png';
+import Logo from '../assets/Logo1.png';
 import styles from './Register.module.css'; // Créer un fichier CSS séparé
 
 const Register = () => {
