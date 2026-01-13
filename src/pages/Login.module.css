@@ -1,0 +1,495 @@
+/* Login.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-20px, 20px) rotate(1deg);
+    }
+    50% {
+        transform: translate(20px, -20px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(-20px, -20px) rotate(1deg);
+    }
+}
+
+/* Carte de connexion compacte */
+.card {
+    width: 100%;
+    max-width: 400px;
+    min-height: 500px;
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    border-radius: 24px 24px 0 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* En-tête compact */
+.header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.logoWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.9375rem;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Formulaire */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1;
+}
+
+/* Groupes de champs */
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    display: block;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    padding-right: 2.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    background: #ffffff;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+/* Bouton afficher/masquer mot de passe */
+.passwordToggle {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passwordToggle:hover {
+    color: #4f46e5;
+}
+
+.eyeIcon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+}
+
+/* Lien mot de passe oublié */
+.forgotLinkWrapper {
+    text-align: right;
+    margin-top: 0.25rem;
+}
+
+.forgotLink {
+    font-size: 0.8125rem;
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.forgotLink:hover {
+    color: #3730a3;
+    text-decoration: underline;
+}
+
+/* Bouton de connexion */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+}
+
+.arrowIcon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.button:hover .arrowIcon {
+    transform: translateX(4px);
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.divider span {
+    padding: 0 1rem;
+    color: #9ca3af;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    background: white;
+}
+
+/* Texte d'inscription */
+.registerText {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0.5rem 0 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.registerLink {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.registerLink:hover {
+    color: #3730a3;
+    text-decoration: underline;
+}
+
+/* Message d'erreur */
+.error {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    text-align: center;
+    border: 1px solid #fecaca;
+    animation: shake 0.5s ease;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* ==================== */
+/* DARK MODE STYLES */
+/* ==================== */
+
+[data-theme="dark"] .container {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+[data-theme="dark"] .card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .title {
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .subtitle {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .input {
+    background: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .input:focus {
+    border-color: #8b5cf6;
+    background: #334155;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+[data-theme="dark"] .input::placeholder {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .passwordToggle {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .passwordToggle:hover {
+    color: #8b5cf6;
+}
+
+[data-theme="dark"] .forgotLink {
+    color: #8b5cf6;
+}
+
+[data-theme="dark"] .forgotLink:hover {
+    color: #a78bfa;
+}
+
+[data-theme="dark"] .button {
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+[data-theme="dark"] .button:hover {
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="dark"] .divider span {
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .divider::before,
+[data-theme="dark"] .divider::after {
+    background: #334155;
+}
+
+[data-theme="dark"] .registerText {
+    color: #cbd5e1;
+    border-top-color: #334155;
+}
+
+[data-theme="dark"] .registerLink {
+    color: #8b5cf6;
+}
+
+[data-theme="dark"] .registerLink:hover {
+    color: #a78bfa;
+}
+
+[data-theme="dark"] .error {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+    
+    .card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        min-height: auto;
+    }
+    
+    .logo {
+        width: 140px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.875rem;
+    }
+    
+    .input {
+        padding: 0.75rem 1rem;
+        padding-right: 2.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Animation de chargement optionnelle */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,32 @@
+.layout {
+    min-height: 100vh;
+    /* Transparent so body background shows through */
+    background: transparent;
+}
+
+.mainWrapper {
+    /* Offset = Sidebar width (260) + Left Margin (16/space-4) + Gap (16) */
+    margin-left: 292px;
+    margin-right: var(--space-4);
+    /* Add right margin to balance */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Width is auto handled by margins */
+}
+
+.content {
+    padding: var(--space-8) 0;
+    flex: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .mainWrapper {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
