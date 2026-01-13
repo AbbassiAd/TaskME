@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from './Login.module.css';
-import Logo from '../assets/logo1.png';
+import Logo from '../assets/Logo1.png';
 
 const Login = () => {
     const [identifier, setIdentifier] = useState('');
