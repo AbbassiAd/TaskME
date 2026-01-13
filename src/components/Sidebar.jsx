@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, ClipboardList, Truck, CheckSquare, Settings, LogOut, MessageSquare } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import styles from './Sidebar.module.css';
-import Logo from '../assets/logo1.png';
+import Logo from '../assets/Logo1.png';
 
 
 const Sidebar = () => {
